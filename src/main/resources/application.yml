@@ -33,7 +33,7 @@ mybatis:
 #==================== project Setting  =====================#
 file:
   server:
-    dir: /home/ming/gkuoj/file
+    dir: /Users/dengsuyuan/Downloads/test
     testcase:
       dir: ${file.server.dir}/testcase
 #====================rocketMQ Setting =====================#
