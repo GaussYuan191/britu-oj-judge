@@ -108,8 +108,16 @@ public class JudgeServiceImpl implements JudgeService {
         problemService.updateProblemResultStatusById(problemResult.getId(), JudgeStatusEnum.JUDGING.getStatus());
 
         String problemDirPath = fileServerTestcaseDir + "/" + problemResult.getProblemId();
-        String inputFileDirPath = problemDirPath + "/input";
-        String outputFileDirPath = problemDirPath + "/output";
+        String inputFileDirPath = null;
+        String outputFileDirPath = null;
+
+        if (problemResult.getTestcode().equals("0")){
+            inputFileDirPath = problemDirPath + "/input";
+            outputFileDirPath = problemDirPath + "/output";
+        } else if (problemResult.getTestcode().equals("1")){
+            inputFileDirPath = problemDirPath + "/input_test";
+            outputFileDirPath = problemDirPath + "/output_test";
+        }
 
         Problem problem = problemService.getProblemById(problemResult.getProblemId());
         //AC题目增加的点数
@@ -120,6 +128,7 @@ public class JudgeServiceImpl implements JudgeService {
             //执行输入和输出
             File inputFileDir = new File(inputFileDirPath);
             File[] inputFiles = inputFileDir.listFiles();
+            System.out.println(inputFiles.length);
             CountDownLatch countDownLatch = new CountDownLatch(inputFiles.length);
             ExecutorService executorService = Executors.newFixedThreadPool(inputFiles.length);
 
