@@ -17,13 +17,13 @@ public class ConsumerTest {
 
     public static void main(String[] args) throws MQClientException {
 
-        pushConsumer = new DefaultMQPushConsumer("judgeConsumerGroup");
-        pushConsumer.setNamesrvAddr("127.0.0.1:9876");
+        pushConsumer = new DefaultMQPushConsumer("judgeConsumerGroup1");
+        pushConsumer.setNamesrvAddr("39.106.134.120::9876");
         pushConsumer.setConsumeThreadMax(Integer.parseInt("20"));
         pushConsumer.setConsumeThreadMin(Integer.parseInt("10"));
         pushConsumer.setMessageModel(MessageModel.CLUSTERING);
         pushConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
-        pushConsumer.subscribe("ojcode", "*");
+        pushConsumer.subscribe("ojcode1", "*");
         //设置实例名称
         pushConsumer.setInstanceName("consumer");
         //监听消息
@@ -31,10 +31,12 @@ public class ConsumerTest {
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
                 //获取消息
+                System.out.println(1);
                 for(MessageExt ext:msgs){
                     //RocketMQ由于是集群环境，所以产生的消息ID可能会重复
                     System.out.println(ext.getMsgId()+"----------"+new String(ext.getBody()));
                 }
+                System.out.println(2);
                 //接受消息状态 1.消费成功    2.消费失败   队列还有
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }
