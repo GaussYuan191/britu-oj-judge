@@ -12,7 +12,7 @@ public class ProblemResult implements Serializable {
 
     private Integer userId;
 
-    private Integer problemId;
+    private String problemId;
 
     private Integer compId;
 
@@ -40,7 +40,7 @@ public class ProblemResult implements Serializable {
 
     private ConcurrentSkipListMap<Integer,TestcaseResult> resultMap = new ConcurrentSkipListMap<>();
 
-    public ProblemResult(Integer id, Integer userId, Integer problemId, Integer compId, Integer compScore, String runNum, Integer status, String type, Long time, Long memory, String errorMsg, String sourceCode, Date createTime, Date updateTime, String testcode, ConcurrentSkipListMap<Integer, TestcaseResult> resultMap) {
+    public ProblemResult(Integer id, Integer userId, String problemId, Integer compId, Integer compScore, String runNum, Integer status, String type, Long time, Long memory, String errorMsg, String sourceCode, Date createTime, Date updateTime, String testcode, ConcurrentSkipListMap<Integer, TestcaseResult> resultMap) {
         this.id = id;
         this.userId = userId;
         this.problemId = problemId;
@@ -83,11 +83,11 @@ public class ProblemResult implements Serializable {
         this.userId = userId;
     }
 
-    public Integer getProblemId() {
+    public String getProblemId() {
         return problemId;
     }
 
-    public void setProblemId(Integer problemId) {
+    public void setProblemId(String problemId) {
         this.problemId = problemId;
     }
 

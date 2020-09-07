@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface ProblemService {
 
-    Problem getProblemById(Integer problemId);
+    Problem getProblemById(String problemId);
 
     ProblemResult getProblemResultById(Integer problemResultId);
 
@@ -28,11 +28,11 @@ public interface ProblemService {
 
     ServerResponse updateProblemResultById(ProblemResult problemResult);
 
-    ServerResponse addProblemCountById(Integer problemId, JudgeStatusEnum statusConst);
+    ServerResponse addProblemCountById(String problemId, JudgeStatusEnum statusConst);
 
     ServerResponse insertBatchTestcaseResult(List<TestcaseResult> testcaseResultList);
 
-    int countProblemResult(Integer userId,Integer problemId,Integer status);
+    int countProblemResult(Integer userId,String problemId,Integer status);
 
     ServerResponse addCompScoreById(Integer compScore,Integer problemResultId);
 

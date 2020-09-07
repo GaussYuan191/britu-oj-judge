@@ -16,7 +16,7 @@ public class CompetitionProblemServiceImpl implements CompetitionProblemService 
     private CompetitionProblemMapper competitionProblemMapper;
 
     @Override
-    public Integer getScoreByCompIdProblemId(Integer compId, Integer problemId) {
+    public Integer getScoreByCompIdProblemId(Integer compId, String problemId) {
         if(compId == null || problemId == null){
             return null;
         }
@@ -24,7 +24,7 @@ public class CompetitionProblemServiceImpl implements CompetitionProblemService 
     }
 
     @Override
-    public ServerResponse addAcCountByCompIdProblemId(Integer compId, Integer problemId) {
+    public ServerResponse addAcCountByCompIdProblemId(Integer compId, String problemId) {
         if(compId == null || problemId == null){
             return ServerResponse.fail();
         }
@@ -33,7 +33,7 @@ public class CompetitionProblemServiceImpl implements CompetitionProblemService 
     }
 
     @Override
-    public ServerResponse addSubmitCountByCompIdProblemId(Integer compId, Integer problemId) {
+    public ServerResponse addSubmitCountByCompIdProblemId(Integer compId, String problemId) {
         if(compId == null || problemId == null){
             return ServerResponse.fail();
         }

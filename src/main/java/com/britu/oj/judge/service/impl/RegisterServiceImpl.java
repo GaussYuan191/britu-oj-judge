@@ -18,7 +18,7 @@ public class RegisterServiceImpl implements RegisterService {
 
 
     @Override
-    public ServerResponse addSolutionCountByProblemIdCompIdUserId(Integer problemId,Integer compId, Integer userId) {
+    public ServerResponse addSolutionCountByProblemIdCompIdUserId(String problemId,Integer compId, Integer userId) {
         int effect = registerMapper.addSolutionCountByProblemIdCompIdUserId(problemId,compId, userId);
         return effect > 0 ? ServerResponse.success() : ServerResponse.fail();
     }

@@ -8,10 +8,10 @@ import com.britu.oj.judge.response.ServerResponse;
  */
 public interface CompetitionProblemService {
 
-    Integer getScoreByCompIdProblemId(Integer compId,Integer problemId);
+    Integer getScoreByCompIdProblemId(Integer compId,String problemId);
 
-    ServerResponse addAcCountByCompIdProblemId(Integer compId,Integer problemId);
+    ServerResponse addAcCountByCompIdProblemId(Integer compId,String problemId);
 
-    ServerResponse addSubmitCountByCompIdProblemId(Integer compId,Integer problemId);
+    ServerResponse addSubmitCountByCompIdProblemId(Integer compId,String problemId);
 
 }

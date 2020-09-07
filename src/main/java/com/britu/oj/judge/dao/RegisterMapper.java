@@ -17,7 +17,7 @@ public interface RegisterMapper {
 
     int updateByPrimaryKey(Register record);
 
-    int addSolutionCountByProblemIdCompIdUserId(@Param("problemId")Integer problemId,@Param("compId") Integer compId, @Param("userId") Integer userId);
+    int addSolutionCountByProblemIdCompIdUserId(@Param("problemId")String problemId,@Param("compId") Integer compId, @Param("userId") Integer userId);
 
     int addSubmitCountByCompIdUserId(@Param("compId") Integer compId, @Param("userId") Integer userId);
 

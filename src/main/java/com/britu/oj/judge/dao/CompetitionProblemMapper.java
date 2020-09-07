@@ -16,10 +16,10 @@ public interface CompetitionProblemMapper {
 
     int updateByPrimaryKey(CompetitionProblem record);
 
-    Integer getScoreByCompIdProblemId(@Param("compId") Integer compId,@Param("problemId")  Integer problemId);
+    Integer getScoreByCompIdProblemId(@Param("compId") Integer compId,@Param("problemId")  String problemId);
 
-    int addAcCountByCompIdProblemId(@Param("compId") Integer compId,@Param("problemId")  Integer problemId);
+    int addAcCountByCompIdProblemId(@Param("compId") Integer compId,@Param("problemId")  String problemId);
 
-    int addSubmitCountByCompIdProblemId(@Param("compId") Integer compId,@Param("problemId")  Integer problemId);
+    int addSubmitCountByCompIdProblemId(@Param("compId") Integer compId,@Param("problemId")  String problemId);
 
 }

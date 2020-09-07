@@ -33,7 +33,7 @@ public class ProblemServiceImpl implements ProblemService {
     private TestcaseResultMapper testcaseResultMapper;
 
     @Override
-    public Problem getProblemById(Integer problemId) {
+    public Problem getProblemById(String problemId) {
         return problemMapper.selectByPrimaryKey(problemId);
     }
 
@@ -97,7 +97,7 @@ public class ProblemServiceImpl implements ProblemService {
      * @return
      */
     @Override
-    public ServerResponse addProblemCountById(Integer problemId, JudgeStatusEnum statusConst) {
+    public ServerResponse addProblemCountById(String problemId, JudgeStatusEnum statusConst) {
         int effect = 0;
         if (Objects.equals(JudgeStatusEnum.ACCEPTED, statusConst)) {
             effect = problemMapper.addAcCount(problemId);
@@ -131,7 +131,7 @@ public class ProblemServiceImpl implements ProblemService {
     }
 
     @Override
-    public int countProblemResult(Integer userId, Integer problemId,Integer status) {
+    public int countProblemResult(Integer userId, String problemId,Integer status) {
         return problemResultMapper.countByUserIdProblemIdStatus(userId,problemId,status);
     }
 

@@ -22,9 +22,9 @@ public interface ProblemResultMapper {
 
     int updateProblemResultStatus(@Param("problemResultId") Integer problemResultId,@Param("status") Integer status);
 
-    List<ProblemResult> listByUserIdProblemId(@Param("userId") Integer userId,@Param("problemId") Integer problemId);
+    List<ProblemResult> listByUserIdProblemId(@Param("userId") Integer userId,@Param("problemId") String problemId);
 
-    int countByUserIdProblemIdStatus(@Param("userId") Integer userId,@Param("problemId") Integer problemId,@Param("status")Integer status);
+    int countByUserIdProblemIdStatus(@Param("userId") Integer userId,@Param("problemId") String problemId,@Param("status")Integer status);
 
     ProblemResult getProblemResultByRunNum(String runNum);
 

@@ -8,7 +8,7 @@ import com.britu.oj.judge.response.ServerResponse;
  */
 public interface RegisterService {
 
-    ServerResponse addSolutionCountByProblemIdCompIdUserId(Integer problemId,Integer compId, Integer userId);
+    ServerResponse addSolutionCountByProblemIdCompIdUserId(String problemId,Integer compId, Integer userId);
 
     ServerResponse addSubmitCountByCompIdUserId(Integer compId, Integer userId);
 

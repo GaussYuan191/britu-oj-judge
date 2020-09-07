@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ServerResponse addSolutionCountAndGoldCountAndRating(Integer userId, Integer problemId, Integer goldCount, Integer ratingCount) {
+    public ServerResponse addSolutionCountAndGoldCountAndRating(Integer userId, String problemId, Integer goldCount, Integer ratingCount) {
         int effect = userMapper.addSolutionCountAndGoldCountAndRating(userId, problemId, goldCount, ratingCount);
         return effect > 0 ? ServerResponse.success() : ServerResponse.fail();
     }

@@ -4,31 +4,31 @@ package com.britu.oj.judge.dao;
 import com.britu.oj.judge.entity.Problem;
 
 public interface ProblemMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Problem record);
 
     int insertSelective(Problem record);
 
-    Problem selectByPrimaryKey(Integer id);
+    Problem selectByPrimaryKey(String id);
 
     int updateByPrimaryKeySelective(Problem record);
 
     int updateByPrimaryKey(Problem record);
 
-    int addAcCount(Integer problemId);
+    int addAcCount(String problemId);
 
-    int addPeCount(Integer problemId);
+    int addPeCount(String problemId);
 
-    int addCeCount(Integer problemId);
+    int addCeCount(String problemId);
 
-    int addTleCount(Integer problemId);
+    int addTleCount(String problemId);
 
-    int addMeCount(Integer problemId);
+    int addMeCount(String problemId);
 
-    int addReCount(Integer problemId);
+    int addReCount(String problemId);
 
-    int addWaCount(Integer problemId);
+    int addWaCount(String problemId);
 
 
 

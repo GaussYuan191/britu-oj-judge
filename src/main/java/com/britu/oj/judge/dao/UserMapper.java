@@ -17,7 +17,7 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-    int addSolutionCountAndGoldCountAndRating(@Param("userId") Integer userId, @Param("problemId")Integer problemId,
+    int addSolutionCountAndGoldCountAndRating(@Param("userId") Integer userId, @Param("problemId")String problemId,
                                               @Param("goldCount")Integer goldCount,@Param("ratingCount")Integer ratingCount);
 
     int addAcCount(Integer userId);
