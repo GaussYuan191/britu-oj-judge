@@ -3,7 +3,7 @@
 <mapper namespace="com.britu.oj.judge.dao.ProblemMapper" >
   <resultMap id="BaseResultMap" type="com.britu.oj.judge.entity.Problem" >
     <constructor >
-      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.String" />
       <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="content" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="html_content" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -32,7 +32,7 @@
     submit_count, ac_count, tle_count, pe_count, me_count, re_count, ce_count, wa_count, 
     time, memory, flag, create_time, update_time
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select
     <include refid="Base_Column_List" />
     from problem
@@ -286,39 +286,39 @@
 
 
 
-  <update id="addAcCount" parameterType="int">
+  <update id="addAcCount" parameterType="String">
     update problem set ac_count = ac_count + 1 , submit_count = submit_count + 1
     where id = #{problemId}
   </update>
 
-  <update id="addTleCount" parameterType="int">
+  <update id="addTleCount" parameterType="String">
     update problem set tle_count = tle_count + 1 , submit_count = submit_count + 1
     where id = #{problemId}
   </update>
 
-  <update id="addPeCount" parameterType="int">
+  <update id="addPeCount" parameterType="String">
     update problem set pe_count = pe_count + 1 , submit_count = submit_count + 1
     where id = #{problemId}
   </update>
 
-  <update id="addCeCount" parameterType="int">
+  <update id="addCeCount" parameterType="String">
     update problem set ce_count = ce_count + 1 , submit_count = submit_count + 1
     where id = #{problemId}
   </update>
 
 
-  <update id="addMeCount" parameterType="int">
+  <update id="addMeCount" parameterType="String">
     update problem set me_count = me_count + 1 , submit_count = submit_count + 1
     where id = #{problemId}
   </update>
 
-  <update id="addWaCount" parameterType="int">
+  <update id="addWaCount" parameterType="String">
     update problem set wa_count = wa_count + 1 , submit_count = submit_count + 1
     where id = #{problemId}
   </update>
 
 
-  <update id="addReCount" parameterType="int">
+  <update id="addReCount" parameterType="String">
     update problem set re_count = re_count + 1 , submit_count = submit_count + 1
     where id = #{problemId}
   </update>
